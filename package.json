@@ -1,0 +1,16 @@
+{
+  "name": "earthquake-monitoring",
+  "version": "1.0.0",
+  "description": "Monitors Happened Earthquake by Using USGS API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danial Dabirian",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}
