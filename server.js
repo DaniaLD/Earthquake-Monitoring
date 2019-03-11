@@ -1,15 +1,19 @@
 const express = require('express');
-const request = require('request');
+const bodyParser = require('body-parser');
+const routes = require('./routes/index');
 
+// Configs
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname + '/views/'));
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-    res.render('index');
-});
+// Routes
+app.use('/', routes);
 
 app.listen(port, err => {
     err ?
