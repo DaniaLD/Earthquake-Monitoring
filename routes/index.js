@@ -9,7 +9,7 @@ router.route('/')
         request(`https://earthquake.usgs.gov/fdsnws/event/1/query?starttime=2018-01-01&endtime=2019-03-01&format=geojson&latitude=${req.body.lat}&longitude=${req.body.lng}&maxradiuskm=100`,
             (err, response, body) => {
                 err ?
-                    console.log(err) : res.send(body);
+                    console.log(err) : console.log(body);
             });
     });
 
