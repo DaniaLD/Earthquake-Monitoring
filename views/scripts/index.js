@@ -69,8 +69,10 @@ const error = error => {
 navigator.geolocation.getCurrentPosition(success, error);
 
 mymap.on('click', e => {
-    mymap.removeLayer(markers);
-    mymap.removeLayer(circle);
+    if (markers && circle) {
+        mymap.removeLayer(markers);
+        mymap.removeLayer(circle);
+    }
 
     const clickedPoint = {
         lat: e.latlng.lat,
